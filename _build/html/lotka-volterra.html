@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lotka-Volterra Introduction &#8212; Lotka Volterra Model in Drug Discovery</title>
+    <title>Lotka-Volterra Introduction &#8212; Lotka-Volterra Model in Drug Discovery</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -78,7 +78,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Lotka Volterra Model in Drug Discovery</h1>
+      <h1 class="site-logo" id="site-title">Lotka-Volterra Model in Drug Discovery</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -233,7 +233,7 @@ who developed the system of equations independent of each other in the first hal
 Lotka had developed the model to explain the dynamics of predator and prey populations, expanding on his previous model
 of autocatalytic chemical reactions. Volterra had developed the system of equations to model the population of predator
 fish in the Adriatic Sea.</p>
-<p>The basic system consists of two linear ordinary differential equations (ode). One equation represents the change in population of
+<p>The basic system consists of two linear ordinary differential equations (ODE). One equation represents the change in population of
 the prey over time and is dependent on the population of the predator. The other equation represents the same but
 for the predator population.</p>
 <p>As an example, we let the prey be sheep and the predators be wolves.
@@ -247,7 +247,7 @@ exponentially:</p>
 often they met with the wolves. If there are more wolves, then there is more likelihood that they would meet sheep and
 eat one. If there are more sheep, then they would have more likelihood of meeting wolves. If a wolf eats a sheep anytime
 it finds one, then the death of the sheep is proportional to how many wolves there are. This relationship is the same
-as the law of mass action, the rate of the chemical reaction is proportional to the concentration of the reactants.
+as the law of mass action: the rate of a chemical reaction is proportional to the concentration of the reactants.
 In this case, the death of the sheep is then represented by a constant multiplied by the population of the sheep and the
 population of the wolves. The sheep population equation is represented as:</p>
 <blockquote>
@@ -265,16 +265,16 @@ wolves and <span class="math notranslate nohighlight">\(\gamma\)</span> is the m
 <li><p>The wolves will always eat a sheep when it meets one.</p></li>
 <li><p>The wolves only eat sheep.</p></li>
 </ul>
-<p>To see the interaction between the wolf and sheep populations, let <span class="math notranslate nohighlight">\(\alpha= 1.1, \beta = 0.4, \delta = 0.1, and \gamma = 0.4\)</span>.
-If we then solve this system, assuming time is in weeks, with initial population of 10 (thousands) sheep
-and 1 (thousand) wolf, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).</p>
+<p>To see the interaction between the wolf and sheep populations, let <span class="math notranslate nohighlight">\(\alpha= 1.1, \beta = 0.4, \delta = 0.1\)</span>, and <span class="math notranslate nohighlight">\(\gamma = 0.4\)</span>.
+If we then solve this system, assuming time is in weeks, with initial population of 10 thousand sheep
+and 1 thousand wolf, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span> <span class="k">as</span> <span class="n">ode</span>
-<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
 </pre></div>
 </div>
 </div>
@@ -325,7 +325,7 @@ and 1 (thousand) wolf, the following plot shows the solutions on the interval [0
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">output</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator Population&quot;</span><span class="p">)</span> <span class="c1"># Prey output</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level (in thousands)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator / Prey Dynamics&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -381,7 +381,7 @@ x &amp;= \frac{\gamma}{\delta} \text{ or }y = 0
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">output_eq</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator Population&quot;</span><span class="p">)</span> <span class="c1"># Prey output</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level (in thousands)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator / Prey Dynamics&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -446,8 +446,8 @@ To visualize this, we can make a phase space plot with varying parameter values.
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_vary</span><span class="p">[</span><span class="mi">7</span><span class="p">][:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">output_vary</span><span class="p">[</span><span class="mi">7</span><span class="p">][:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;darkcyan&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;gamma: 0.8&quot;</span><span class="p">)</span>
 
 <span class="c1">#plt.plot(output)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Prey Population&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predator Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Prey Population (in thousands)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predator Population (in thousands)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator / Prey Phase Space Plot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -473,7 +473,7 @@ eigenvector of the Jacobian matrix).</p>
 A more realistic approach is to assume there is a carrying capacity. When the sheep population is below the environmental
 carrying capacity, the growth rate is large. When the sheep population is equal to it’s carrying capacity, there is no
 growth and when the sheep population is above the carrying capacity, there is negative growth.</p>
-<p>Incorporating the carrying capacity into the model would alter the sheep population ode:</p>
+<p>Incorporating the carrying capacity into the model would alter the sheep population ODE:</p>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\( \frac{dx}{dt} = \alpha x (1-\frac{x}{K}), \)</span></p>
 </div></blockquote>
@@ -514,7 +514,7 @@ growth and when the sheep population is above the carrying capacity, there is ne
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">output_carry_cap</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator Population&quot;</span><span class="p">)</span> <span class="c1"># Prey output</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population Level (in thousands)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator / Prey Dynamics with Prey Carrying Capacity&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -553,8 +553,8 @@ ellipse.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_carry_cap</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">output_carry_cap</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;original&quot;</span><span class="p">)</span>
 
 <span class="c1">#plt.plot(output)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Prey Population&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predator Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Prey Population (in thousands)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predator Population (in thousands)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator / Prey  with Carrying Capacity Phase Plot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -586,14 +586,12 @@ time is shown in the table below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_10740</span><span class="o">/</span><span class="mf">1304602941.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">[</span><span class="s1">&#39;Predator - 1&#39;</span><span class="p">,</span><span class="s1">&#39;gamma * y&#39;</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Events&quot;</span><span class="p">,</span> <span class="s2">&quot;Propensity&quot;</span><span class="p">]))</span>
-
-<span class="ne">TypeError</span>: &#39;module&#39; object is not callable
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Events        Propensity
+------------  ---------------------
+Prey + 1      alpha * x * (1 - x/k)
+Prey - 1      beta * x * y
+Predator + 1  delta * x * y
+Predator - 1  gamma * y
 </pre></div>
 </div>
 </div>
@@ -671,7 +669,7 @@ time is shown in the table below.</p>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Prey&#39;</span><span class="p">,</span> <span class="s1">&#39;Predator&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Population (in thousands)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -680,7 +678,7 @@ time is shown in the table below.</p>
 <img alt="_images/lotka-volterra_18_0.png" src="_images/lotka-volterra_18_0.png" />
 </div>
 </div>
-<p>In the stochastic model, there are several simulations in which the predator and/or prey population becomes extinct.
+<p>In the stochastic model, there are several simulations in which the predator and/or prey population become extinct.
 This could be a more realistic situation, especially given that the original models showed the populations had fallen
 to very low numbers and could likely become extinct.</p>
 <p>If we change the predator-prey model dynamics such that the two species are competing for the same resource(s), then we

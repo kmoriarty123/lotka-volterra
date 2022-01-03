@@ -1,6 +1,6 @@
 # Book settings
 
-title: Lotka Volterra Model in Drug Discovery
+title: Lotka-Volterra Model in Drug Discovery
 author: Kathleen Moriarty
 
 # Force re-execution of notebooks on each build.

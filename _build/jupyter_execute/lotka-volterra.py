@@ -9,7 +9,7 @@
 # of autocatalytic chemical reactions. Volterra had developed the system of equations to model the population of predator
 # fish in the Adriatic Sea.
 # 
-# The basic system consists of two linear ordinary differential equations (ode). One equation represents the change in population of
+# The basic system consists of two linear ordinary differential equations (ODE). One equation represents the change in population of
 # the prey over time and is dependent on the population of the predator. The other equation represents the same but
 # for the predator population.
 # 
@@ -25,7 +25,7 @@
 # often they met with the wolves. If there are more wolves, then there is more likelihood that they would meet sheep and
 # eat one. If there are more sheep, then they would have more likelihood of meeting wolves. If a wolf eats a sheep anytime
 # it finds one, then the death of the sheep is proportional to how many wolves there are. This relationship is the same
-# as the law of mass action, the rate of the chemical reaction is proportional to the concentration of the reactants.
+# as the law of mass action: the rate of a chemical reaction is proportional to the concentration of the reactants.
 # In this case, the death of the sheep is then represented by a constant multiplied by the population of the sheep and the
 # population of the wolves. The sheep population equation is represented as:
 # 
@@ -43,9 +43,9 @@
 # - The wolves will always eat a sheep when it meets one.
 # - The wolves only eat sheep.
 # 
-# To see the interaction between the wolf and sheep populations, let $\alpha= 1.1, \beta = 0.4, \delta = 0.1, and \gamma = 0.4$.
-# If we then solve this system, assuming time is in weeks, with initial population of 10 (thousands) sheep
-# and 1 (thousand) wolf, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).
+# To see the interaction between the wolf and sheep populations, let $\alpha= 1.1, \beta = 0.4, \delta = 0.1$, and $\gamma = 0.4$.
+# If we then solve this system, assuming time is in weeks, with initial population of 10 thousand sheep
+# and 1 thousand wolf, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).
 
 # In[1]:
 
@@ -54,7 +54,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random
 from scipy.integrate import odeint as ode
-import tabulate
+from tabulate import tabulate
 
 
 # In[2]:
@@ -103,7 +103,7 @@ plt.plot(time, output[:,0], color = "green", label = "Prey Population") # Prey o
 plt.plot(time, output[:,1], color = "red", label = "Predator Population") # Prey output
 
 plt.xlabel("Time")
-plt.ylabel("Population Level")
+plt.ylabel("Population Level (in thousands)")
 
 plt.title("Predator / Prey Dynamics")
 plt.legend()
@@ -160,7 +160,7 @@ plt.plot(time, output_eq[:,0], color = "green", label = "Prey Population") # Pre
 plt.plot(time, output_eq[:,1], color = "red", label = "Predator Population") # Prey output
 
 plt.xlabel("Time")
-plt.ylabel("Population Level")
+plt.ylabel("Population Level (in thousands)")
 
 plt.title("Predator / Prey Dynamics")
 plt.legend()
@@ -221,8 +221,8 @@ plt.plot(output_vary[6][:,0], output_vary[6][:,1], color = "aqua", label = "gamm
 plt.plot(output_vary[7][:,0], output_vary[7][:,1], color = "darkcyan", label = "gamma: 0.8")
 
 #plt.plot(output)
-plt.xlabel("Prey Population")
-plt.ylabel("Predator Population")
+plt.xlabel("Prey Population (in thousands)")
+plt.ylabel("Predator Population (in thousands)")
 
 plt.title("Predator / Prey Phase Space Plot")
 plt.legend()
@@ -248,7 +248,7 @@ plt.show()
 # carrying capacity, the growth rate is large. When the sheep population is equal to it's carrying capacity, there is no
 # growth and when the sheep population is above the carrying capacity, there is negative growth.
 # 
-# Incorporating the carrying capacity into the model would alter the sheep population ode:
+# Incorporating the carrying capacity into the model would alter the sheep population ODE:
 # 
 # > $ \frac{dx}{dt} = \alpha x (1-\frac{x}{K}), $
 # 
@@ -293,7 +293,7 @@ plt.plot(time, output_carry_cap[:,0], color = "green", label = "Prey Population"
 plt.plot(time, output_carry_cap[:,1], color = "red", label = "Predator Population") # Prey output
 
 plt.xlabel("Time")
-plt.ylabel("Population Level")
+plt.ylabel("Population Level (in thousands)")
 
 plt.title("Predator / Prey Dynamics with Prey Carrying Capacity")
 plt.legend()
@@ -329,8 +329,8 @@ plt.show()
 plt.plot(output_carry_cap[:,0], output_carry_cap[:,1], color = "black", label = "original")
 
 #plt.plot(output)
-plt.xlabel("Prey Population")
-plt.ylabel("Predator Population")
+plt.xlabel("Prey Population (in thousands)")
+plt.ylabel("Predator Population (in thousands)")
 
 plt.title("Predator / Prey  with Carrying Capacity Phase Plot")
 plt.legend()
@@ -358,7 +358,7 @@ data = [['Prey + 1', 'alpha * x * (1 - x/k)'],
 print(tabulate(data, headers=["Events", "Propensity"]))
 
 
-# In[97]:
+# In[10]:
 
 
 # Initial conditions
@@ -432,11 +432,11 @@ for i in range(len(x_all)):
 
 plt.legend(['Prey', 'Predator'])
 plt.xlabel("Time")
-plt.ylabel("Population")
+plt.ylabel("Population (in thousands)")
 plt.show()
 
 
-# In the stochastic model, there are several simulations in which the predator and/or prey population becomes extinct.
+# In the stochastic model, there are several simulations in which the predator and/or prey population become extinct.
 # This could be a more realistic situation, especially given that the original models showed the populations had fallen
 # to very low numbers and could likely become extinct.
 

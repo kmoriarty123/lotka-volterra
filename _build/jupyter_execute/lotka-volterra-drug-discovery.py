@@ -16,7 +16,7 @@
 # cells can be modeled using the competitive Lotka-Volterra system.
 # 
 # {cite:t}`zhang2017integrating` created a Lotka-Volterra model to compare the mechanisms of treating metastatic castrate-
-# resistant prostate cancer with Abiraterone, a drug that inhibits a protein, CYP17A1, involved in androgen synthesis.
+# resistant prostate cancer with Abiraterone, a drug that inhibits the protein CYP17A1 involved in androgen synthesis.
 # The population dynamics of the T+ cells, which require exogenous androgen, TP cells, which express CYP17A1, and T- cells,
 # which are resistant to the drug, are modeled using the competitive Lotka-Volterra equations.
 # 
@@ -105,7 +105,7 @@ plt.show()
 # host fitness of these influenza virus strains in ferrets.
 # 
 # Another application of the Lotka-Volterra model deals with primary infections and their secondary, opportunisitc infections,
-# such as HIV with *Mycobacterium tuberculosis* or HIV with *Candida albicans*. Co-infections can inhibit
+# such as HIV with *Mycobacterium tuberculosis* or HIV with *Candida albicans*. Coinfections can inhibit
 # success of drug interventions so understanding the dynamics of coinfections is essential for successful therapy.
 # {cite:t}`eswarappa2012within` used the Lotka-Volterra equations to model different coinfection dynamics.
 # The pathogen species can have very distinct
