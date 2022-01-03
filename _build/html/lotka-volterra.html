@@ -28,6 +28,20 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/vendor/fontawesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,6 +54,21 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/copybutton_funcs.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/documentation_options.js"></script>
+    <script src="_static/jquery-3.5.1.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-thebe.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/underscore-1.13.1.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -110,13 +139,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   References
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="conclusion.html">
-   Conclusion
+  <a class="reference internal" href="references.html">
+   References
   </a>
  </li>
 </ul>
@@ -278,18 +307,6 @@ and 1 (thousand) wolf, the following plot shows the solutions on the interval [0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_33972</span><span class="o">/</span><span class="mf">2372268653.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span> <span class="k">as</span> <span class="n">ode</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">tabulate</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;tabulate&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -348,7 +365,7 @@ and 1 (thousand) wolf, the following plot shows the solutions on the interval [0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_4_0.png" src="_images/lotka-volterra_4_0.png" />
+<img alt="_images/lotka-volterra_4_01.png" src="_images/lotka-volterra_4_01.png" />
 </div>
 </div>
 <p>It makes sense that we see oscillations in the populations as seen in the plot because we have negative
@@ -404,7 +421,7 @@ x &amp;= \frac{\gamma}{\delta} \text{ or }y = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_7_0.png" src="_images/lotka-volterra_7_0.png" />
+<img alt="_images/lotka-volterra_7_01.png" src="_images/lotka-volterra_7_01.png" />
 </div>
 </div>
 <p>It would be interesting to see how the change in the parameters will change the dynamics of the populations.
@@ -470,7 +487,7 @@ To visualize this, we can make a phase space plot with varying parameter values.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_10_0.png" src="_images/lotka-volterra_10_0.png" />
+<img alt="_images/lotka-volterra_10_01.png" src="_images/lotka-volterra_10_01.png" />
 </div>
 </div>
 <p>The black line is the phase plot with the original parameters. It is a closed orbit that oscillates around the
@@ -537,7 +554,7 @@ growth and when the sheep population is above the carrying capacity, there is ne
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_13_0.png" src="_images/lotka-volterra_13_0.png" />
+<img alt="_images/lotka-volterra_13_01.png" src="_images/lotka-volterra_13_01.png" />
 </div>
 </div>
 <p>There is still an oscillation between the predator and prey populations, but the difference between the maximum and
@@ -577,7 +594,7 @@ ellipse.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_15_0.png" src="_images/lotka-volterra_15_0.png" />
+<img alt="_images/lotka-volterra_15_01.png" src="_images/lotka-volterra_15_01.png" />
 </div>
 </div>
 <p>To add stochastic behavior to our system, we can use an algorithm to randomly choose events
@@ -598,12 +615,14 @@ time is shown in the table below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Events        Propensity
-------------  ---------------------
-Prey + 1      alpha * x * (1 - x/k)
-Prey - 1      beta * x * y
-Predator + 1  delta * x * y
-Predator - 1  gamma * y
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_10740</span><span class="o">/</span><span class="mf">1304602941.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">[</span><span class="s1">&#39;Predator - 1&#39;</span><span class="p">,</span><span class="s1">&#39;gamma * y&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Events&quot;</span><span class="p">,</span> <span class="s2">&quot;Propensity&quot;</span><span class="p">]))</span>
+
+<span class="ne">TypeError</span>: &#39;module&#39; object is not callable
 </pre></div>
 </div>
 </div>
@@ -687,7 +706,7 @@ Predator - 1  gamma * y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/lotka-volterra_18_0.png" src="_images/lotka-volterra_18_0.png" />
+<img alt="_images/lotka-volterra_18_01.png" src="_images/lotka-volterra_18_01.png" />
 </div>
 </div>
 <p>In the stochastic model, there are several simulations in which the predator and/or prey population becomes extinct.

@@ -105,10 +105,10 @@ plt.show()
 # host fitness of these influenza virus strains in ferrets.
 # 
 # Another application of the Lotka-Volterra model deals with primary infections and their secondary, opportunisitc infections,
-# such as HIV with \textit{Mycobacterium tuberculosis} or HIV with \textit{Candida albicans}. Co-infections can inhibit
+# such as HIV with *Mycobacterium tuberculosis* or HIV with *Candida albicans*. Co-infections can inhibit
 # success of drug interventions so understanding the dynamics of coinfections is essential for successful therapy.
-# {cite:t}`eswarappa2012within'
-# used the Lotka-Volterra equations to model different coinfection dynamics. The pathogen species can have very distinct
+# {cite:t}`eswarappa2012within` used the Lotka-Volterra equations to model different coinfection dynamics.
+# The pathogen species can have very distinct
 # interactions ranging from a relationship of reciprocal facilitation to competition. The authors modeled these different
 # types of relationships and found, not surprisingly, that reciprocal facilitation of the two pathogens could cause the most harm for the host.
 # 
