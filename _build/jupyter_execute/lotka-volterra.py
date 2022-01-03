@@ -45,7 +45,7 @@
 # 
 # To see the interaction between the wolf and sheep populations, let $\alpha= 1.1, \beta = 0.4, \delta = 0.1$, and $\gamma = 0.4$.
 # If we then solve this system, assuming time is in weeks, with initial population of 10 thousand sheep
-# and 1 thousand wolf, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).
+# and 1 thousand wolves, the following plot shows the solutions on the interval [0,100] (100 weeks or a little under 2 years).
 
 # In[1]:
 
@@ -124,7 +124,7 @@ plt.show()
 # 
 # The not-so-meaningful solution is when the prey and the predator populations are zero.
 # 
-# The more meaningful populations can be solved:
+# The more meaningful solutions can be found as:
 # 
 # > $ \begin{align}
 # >0 &= \alpha  x - \beta x  y \\
