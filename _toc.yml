@@ -1,0 +1,10 @@
+# Table of contents
+
+format: jb-article
+root: index
+sections:
+- file: abstract.md
+- file: lotka-volterra.ipynb
+- file: lotka-volterra-drug-discovery.ipynb
+- file: conclusion.md
+- file: references.md
